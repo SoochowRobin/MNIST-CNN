@@ -1,11 +1,9 @@
 import os
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
+
 import torchvision.datasets as dset
 import torchvision.transforms as transforms
-
-import torch.optim as optim
 from torch.utils.data import DataLoader
 
 # check if cuda could use

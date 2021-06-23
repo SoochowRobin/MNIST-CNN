@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
@@ -16,7 +17,7 @@ class LeNet(nn.Module):
         x = F.relu(self.conv2(x))
         x = F.max_pool2d(x, 2, 2)
         # reshape the result to 1 dimension
-        x = x.view(-1)
+        x = x.view(-1, 4*4*50)
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
         return x
